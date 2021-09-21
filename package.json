@@ -1,0 +1,32 @@
+{
+    "name": "competitive_guide",
+    "version": "1.0.0",
+    "description": "this is beginning of this project",
+    "main": "app.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/prajapatiraghulal/competitive_guide.git"
+    },
+    "author": "raghulal",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/prajapatiraghulal/competitive_guide/issues"
+    },
+    "homepage": "https://github.com/prajapatiraghulal/competitive_guide#readme",
+    "dependencies": {
+        "axios": "^0.21.4",
+        "body-parser": "^1.19.0",
+        "cookie-parser": "^1.4.5",
+        "ejs": "^3.1.6",
+        "express": "^4.17.1",
+        "fetch": "^1.1.0",
+        "fs": "0.0.1-security",
+        "googleapis": "^87.0.0",
+        "jsonfile": "^6.1.0",
+        "mongoose": "^6.0.6",
+        "youtube-search": "^1.1.6"
+    }
+}
