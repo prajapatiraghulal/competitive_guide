@@ -11,13 +11,18 @@ const app = express();
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 
-const search_list = [
-
-    "problem",
-    "programming"
+const query_strings = [
+    "How to implement the Bubble Sort algorithm",
+    "How to implement the Insertion Sort Algorithm",
+    "How to implement Merge Sort Algorithm",
+    "How to implement the Bucket Sort Algorithm",
+    "How to reverse a linked list",
+    "How to find duplicate numbers in an array if it contains multiple duplicates",
 
 ];
 
+
+/*
 const func = async(query, req, res) => {
     var obj;
 
@@ -66,31 +71,21 @@ const func = async(query, req, res) => {
 
 };
 
-
+*/
 app.get("/", async(req, res) => {
 
 
     //await func(search_list.join("+"), req, res);
-    var idd;
-    var temp;
-    fs.readFile('loop.json', 'utf8', (err, data) => {
+
+    fs.readFile('video_data.json', 'utf8', (err, data) => {
         if (err) {
             console.log(err);
         } else {
-            temp = JSON.parse(data);
-            var table = temp.table;
-            var answer = 0;
+            var temp = JSON.parse(data);
 
-            for (var element of table) {
-                if (element.dat.statistics.viewCount >= 1000) {
-                    if (element.priority > answer) {
-                        answer = element.priority;
-                        idd = element.dat.id;
-                    }
-                }
-            }
-            console.log(answer, idd);
-            res.render("index.ejs", { id: idd });
+
+
+            res.render("index.ejs", { data: temp, vocab: query_strings });
 
         }
     });

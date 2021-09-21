@@ -11,25 +11,21 @@
 
 <body>
     <div class="main_div">
-
-
-
-
         <nav>
             <div class="left_menu">
                 <ul id="menu">
-                    <li> <a href="#">hello</a></li>
-                    <li> <a href="#">how</a> </li>
+                    <li> <a href="#">Logo</a></li>
 
-                    <li><a href="#">here</a></li>
+
+
                 </ul>
             </div>
             <div class="right_menu">
                 <ul id="profile">
-                    <li> <a href="#">a</a></li>
-                    <li> <a href="#">b</a></li>
-                    <li> <a href="#">c</a></li>
-                    <li><a href="#">d</a></li>
+                    <li> <a href="#">Sign Up</a></li>
+                    <li> <a href="#">Login</a></li>
+                    <li> <a href="#">favourite</a></li>
+                    <li><a href="#">Log Out</a></li>
                 </ul>
             </div>
 
@@ -40,16 +36,24 @@
         <div class="inner_main_div" id="middle_1">
             <div class="inner_i_main_div" id="inner_middle_1_left_1"></div>
             <div class="inner_i_main_div" id="inner_middle_1_middle_1">
-                <% const link =    `https://www.youtube.com/embed/${id}`; %>
-                    <%-`<iframe width="50%" height="35%" src=${link}>` %>
-                        </iframe>
+                <% for(var i = 0; i<data.table.length*3 ; ++i){ %>
+                    <% const link =    `https://www.youtube.com/embed/${data.table[i%data.table.length].id}`; %>
+
+                        <%-`<div class="video_div" id="video_div_${i}"> <iframe class = "video" id="video_"${i}  src=${link}></iframe>` %>
+                            <%- `<h1>video ${i+1}</h1></div>` %>
+                                <% }%>
+
             </div>
-            <div class="inner_i_main_div" id="inner_middle_1_right_1"></div>
+            <div class="inner_i_main_div" id="inner_middle_1_right_1">
+                <ol>
+                    <% for(var i = 0; i<data.table.length*3; ++i){ %>
+                        <%- `<li><a href="#video_div_${i}" >${vocab[i%vocab.length]} </a></li> `%>
+                            <% } %>
+                </ol>
+            </div>
 
         </div>
-        <div class="inner_main_div" id="bottom_1">
 
-        </div>
     </div>
 </body>
 
